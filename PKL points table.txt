@@ -1,0 +1,41 @@
+#include &lt;stdio.h&gt;
+struct points
+{
+int won,lost1,lost2,tie,points,matches,sno;
+char team[30];
+};
+typedef struct points S;
+void main()
+{
+S t[5];
+for(int i=1;i&lt;5;i++)
+{
+printf(&quot;Enter serial no. %d:&quot;,i);
+scanf(&quot;%d&quot;,&amp;t[i].sno);
+printf(&quot;Enter team name : &quot;);
+scanf(&quot;%s&quot;,t[i].team);
+printf(&quot;Enter total matches : &quot;);
+scanf(&quot;%d&quot;,&amp;t[i].matches);
+printf(&quot;Enter won matches : &quot;);
+scanf(&quot;%d&quot;,&amp;t[i].won);
+printf(&quot;Enter lost1 matches: &quot;);
+scanf(&quot;%d&quot;,&amp;t[i].lost1);
+printf(&quot;Enter lost2 matches : &quot;);
+scanf(&quot;%d&quot;,&amp;t[i].lost2);
+printf(&quot;Enter tie matches : &quot;);
+scanf(&quot;%d&quot;,&amp;t[i].tie);
+}
+for(int i=1;i&lt;5;i++)
+{
+t[i].points=0;
+t[i].points=t[i].points+t[i].won*5+t[i].lost1*1+t[i].lost2*0+t[i].tie*3;
+}
+printf(&quot;S.no.team name-total matches(won,lost,lost,tie,),points&quot;);
+for(int i=1;i&lt;5;i++)
+{
+printf(&quot;%d.%s-
+%d(%d,%d,%d,%d),%d\n&quot;,t[i].sno,t[i].team,t[i].matches,t[i].won,t[i].lost1,t[i].lost2
+,t[i].tie,t[i].points);
+printf(&quot;............................\n&quot;);
+}
+}
